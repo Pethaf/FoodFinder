@@ -6,7 +6,7 @@ services:
         - "3000:3000"
       volumes:
         - ./code:/home/node/code
-      working_dir: /home/node/code/
+      working_dir: /home/node/code/foodfinder-application
       depends_on: 
         - backend
       environment:
@@ -14,6 +14,7 @@ services:
           - CHOKIDAR_USEPOLLING=true
           - CHOKIDAR_INTERVAL=100
       tty: true
+      command: "npm run dev"
     backend:
         container_name: foodfinder-backend
         image: mongo:latest
