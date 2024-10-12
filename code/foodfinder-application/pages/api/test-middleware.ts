@@ -1,11 +1,14 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import dbConnect from "@/middleware/db-connect";
-import Locations from "@/middleware/mongoose/locations/model";
-export default async function handler(
+
+import { findAllLocations } from "@/mongoose/locations/services";
+
+export default async function Handler(
   req: NextApiRequest,
-  res: NextApiResponse<unknown>
+  res: NextApiResponse<any>
 ) {
   await dbConnect();
-  const locations = await Locations.find({});
-  res.status(200).json(locations);
+  const locations = await findAllLocations();
+  res.status(200).json(locations)
 }
+
