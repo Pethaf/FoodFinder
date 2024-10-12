@@ -1,4 +1,4 @@
 import mongoose, { model }  from "mongoose";
-import { LocationSchema, LocationType } from "../schema";
+import { LocationType, LocationSchema } from "../schema";
 export default mongoose.models.location || model<LocationType>("locations", LocationSchema)
 
