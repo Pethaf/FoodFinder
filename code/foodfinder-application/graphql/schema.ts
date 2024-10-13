@@ -5,7 +5,15 @@ import locationTypeDefsQueries from "graphql/locations/queries.gql";
 import locationTypeDefsMutations from "graphql/locations/mutations.gql";
 
 export const typeDefs = gql`
-${locationTypeDefsCustom}
-type Query {${locationTypeDefsQueries}}
-type Mutation {${locationTypeDefsMutations}}
+
+  ${locationTypeDefsCustom}
+  
+  type Query {
+    ${locationTypeDefsQueries}
+  }
+  
+  type Mutation {
+    ${locationTypeDefsMutations}
+  }
+
 `;

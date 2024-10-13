@@ -5,10 +5,10 @@ import {
 } from "@/mongoose/locations/services";
 
 export const locationQueries = {
-  allocations: async (_: any) => {
+  allLocations: async (_: any) => {
     return await findAllLocations();
   },
-  locatationsById: async (_: any, param: { location_ids: string[] }) => {
+  locationsById: async (_: any, param: { location_ids: string[] }) => {
     return await findLocationsById(param.location_ids);
   },
   onUserWishlist: async (_: any, param: { user_id: string }) => {
